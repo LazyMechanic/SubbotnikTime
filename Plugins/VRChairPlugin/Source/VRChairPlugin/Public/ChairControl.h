@@ -18,11 +18,17 @@ class VRCHAIRPLUGIN_API UChairControl : public UObject
 {
 	GENERATED_BODY()
 
+protected:
+
+	virtual void BeginDestroy() override;
+
+
+
 public:
 
 
-	UFUNCTION(BlueprintCallable, Category = ChairControl)
-		static UChairControl* SerialPort(bool& connected, int32 ComPort);
+	UFUNCTION(BlueprintCallable, Category = ChairControl, meta = (HidePin = "TargetActor", DefaultToSelf = "TargetActor"))
+		static UChairControl* SerialPort(bool& connected, int32 ComPort, AActor* TargetActor);
 
 	UFUNCTION(BlueprintPure, Category = ChairControl)
 		bool isConnected();
@@ -36,10 +42,19 @@ public:
 	UFUNCTION(BlueprintPure, Category = ChairControl)
 		static TArray<uint8> FloatToBytes(float value);
 
-	UFUNCTION(BlueprintCallable, meta = (HidePin = "TargetActor", DefaultToSelf = "TargetActor"), Category = ChairControl)
-		void StartSending(AActor* TargetActor, float time);
+	UFUNCTION(BlueprintCallable, Category = ChairControl, meta = (AdvancedDisplay = "Frequency, Log"))
+		void StartSending(float frequency = 0.05f, bool log = false);
 
 	UFUNCTION(BlueprintCallable, Category = ChairControl)
+		void StopSending();
+	
+	UFUNCTION()
+	void Destroy(AActor* test);
+
+	UFUNCTION(BlueprintCallable, Category = ChairControl, meta = (AdvancedDisplay = "Frequency, Log"))
+		void TimerSending(float time = 1.0f, float frequency = 0.05f, bool log = false);
+
+	UFUNCTION(BlueprintCallable, Category = ChairControl, meta = (DisplayName = "Set Rotation Chair"))
 		void Control(float roll, float pitch);
 
 	UPROPERTY(BlueprintReadWrite, Category = ChairControl)
@@ -47,6 +62,7 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, Category = ChairControl)
 		float roll;
+
 
 private:
 	HANDLE handler;
@@ -72,10 +88,10 @@ private:
 	void StartPost();
 	void StopPost();
 
+
+
 	bool OpenPort(int32 ComPort);
 
-	
-	
-	
+	bool log;
 	
 };

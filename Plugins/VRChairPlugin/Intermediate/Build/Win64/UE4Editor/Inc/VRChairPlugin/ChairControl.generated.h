@@ -27,13 +27,41 @@ class UChairControl;
 		P_NATIVE_END; \
 	} \
  \
-	DECLARE_FUNCTION(execStartSending) \
+	DECLARE_FUNCTION(execTimerSending) \
 	{ \
-		P_GET_OBJECT(AActor,Z_Param_TargetActor); \
 		P_GET_PROPERTY(UFloatProperty,Z_Param_time); \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_frequency); \
+		P_GET_UBOOL(Z_Param_log); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->StartSending(Z_Param_TargetActor,Z_Param_time); \
+		P_THIS->TimerSending(Z_Param_time,Z_Param_frequency,Z_Param_log); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execDestroy) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_test); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->Destroy(Z_Param_test); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execStopSending) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->StopSending(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execStartSending) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_frequency); \
+		P_GET_UBOOL(Z_Param_log); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->StartSending(Z_Param_frequency,Z_Param_log); \
 		P_NATIVE_END; \
 	} \
  \
@@ -75,9 +103,10 @@ class UChairControl;
 	{ \
 		P_GET_UBOOL_REF(Z_Param_Out_connected); \
 		P_GET_PROPERTY(UIntProperty,Z_Param_ComPort); \
+		P_GET_OBJECT(AActor,Z_Param_TargetActor); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(UChairControl**)Z_Param__Result=UChairControl::SerialPort(Z_Param_Out_connected,Z_Param_ComPort); \
+		*(UChairControl**)Z_Param__Result=UChairControl::SerialPort(Z_Param_Out_connected,Z_Param_ComPort,Z_Param_TargetActor); \
 		P_NATIVE_END; \
 	}
 
@@ -94,13 +123,41 @@ class UChairControl;
 		P_NATIVE_END; \
 	} \
  \
-	DECLARE_FUNCTION(execStartSending) \
+	DECLARE_FUNCTION(execTimerSending) \
 	{ \
-		P_GET_OBJECT(AActor,Z_Param_TargetActor); \
 		P_GET_PROPERTY(UFloatProperty,Z_Param_time); \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_frequency); \
+		P_GET_UBOOL(Z_Param_log); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->StartSending(Z_Param_TargetActor,Z_Param_time); \
+		P_THIS->TimerSending(Z_Param_time,Z_Param_frequency,Z_Param_log); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execDestroy) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_test); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->Destroy(Z_Param_test); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execStopSending) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->StopSending(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execStartSending) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_frequency); \
+		P_GET_UBOOL(Z_Param_log); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->StartSending(Z_Param_frequency,Z_Param_log); \
 		P_NATIVE_END; \
 	} \
  \
@@ -142,9 +199,10 @@ class UChairControl;
 	{ \
 		P_GET_UBOOL_REF(Z_Param_Out_connected); \
 		P_GET_PROPERTY(UIntProperty,Z_Param_ComPort); \
+		P_GET_OBJECT(AActor,Z_Param_TargetActor); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(UChairControl**)Z_Param__Result=UChairControl::SerialPort(Z_Param_Out_connected,Z_Param_ComPort); \
+		*(UChairControl**)Z_Param__Result=UChairControl::SerialPort(Z_Param_Out_connected,Z_Param_ComPort,Z_Param_TargetActor); \
 		P_NATIVE_END; \
 	}
 
