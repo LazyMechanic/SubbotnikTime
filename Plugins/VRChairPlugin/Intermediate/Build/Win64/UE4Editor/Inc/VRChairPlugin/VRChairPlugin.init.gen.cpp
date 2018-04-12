@@ -19,8 +19,8 @@ void EmptyLinkFunctionForGeneratedCodeVRChairPlugin_init() {}
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/VRChairPlugin",
 				PKG_CompiledIn | 0x00000080,
-				0xD08FE699,
-				0xE3267B54,
+				0x45BB6BAE,
+				0x41FB6123,
 				nullptr, 0,
 				METADATA_PARAMS(nullptr, 0)
 			};

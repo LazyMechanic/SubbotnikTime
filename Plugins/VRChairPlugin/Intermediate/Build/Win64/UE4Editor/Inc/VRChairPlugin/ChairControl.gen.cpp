@@ -19,12 +19,15 @@ void EmptyLinkFunctionForGeneratedCodeChairControl() {}
 	UPackage* Z_Construct_UPackage__Script_VRChairPlugin();
 	VRCHAIRPLUGIN_API UFunction* Z_Construct_UFunction_UChairControl_ClosePort();
 	VRCHAIRPLUGIN_API UFunction* Z_Construct_UFunction_UChairControl_Control();
+	VRCHAIRPLUGIN_API UFunction* Z_Construct_UFunction_UChairControl_Destroy();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	VRCHAIRPLUGIN_API UFunction* Z_Construct_UFunction_UChairControl_FloatToBytes();
 	VRCHAIRPLUGIN_API UFunction* Z_Construct_UFunction_UChairControl_isConnected();
 	VRCHAIRPLUGIN_API UFunction* Z_Construct_UFunction_UChairControl_PortWrite();
 	VRCHAIRPLUGIN_API UFunction* Z_Construct_UFunction_UChairControl_SerialPort();
 	VRCHAIRPLUGIN_API UFunction* Z_Construct_UFunction_UChairControl_StartSending();
-	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	VRCHAIRPLUGIN_API UFunction* Z_Construct_UFunction_UChairControl_StopSending();
+	VRCHAIRPLUGIN_API UFunction* Z_Construct_UFunction_UChairControl_TimerSending();
 // End Cross Module References
 	void UChairControl::StaticRegisterNativesUChairControl()
 	{
@@ -32,11 +35,14 @@ void EmptyLinkFunctionForGeneratedCodeChairControl() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "ClosePort", &UChairControl::execClosePort },
 			{ "Control", &UChairControl::execControl },
+			{ "Destroy", &UChairControl::execDestroy },
 			{ "FloatToBytes", &UChairControl::execFloatToBytes },
 			{ "isConnected", &UChairControl::execisConnected },
 			{ "PortWrite", &UChairControl::execPortWrite },
 			{ "SerialPort", &UChairControl::execSerialPort },
 			{ "StartSending", &UChairControl::execStartSending },
+			{ "StopSending", &UChairControl::execStopSending },
+			{ "TimerSending", &UChairControl::execTimerSending },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
 	}
@@ -84,10 +90,34 @@ void EmptyLinkFunctionForGeneratedCodeChairControl() {}
 #if WITH_METADATA
 			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 				{ "Category", "ChairControl" },
+				{ "DisplayName", "Set Rotation Chair" },
 				{ "ModuleRelativePath", "Public/ChairControl.h" },
 			};
 #endif
 			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_UChairControl, "Control", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(ChairControl_eventControl_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_UChairControl_Destroy()
+	{
+		struct ChairControl_eventDestroy_Parms
+		{
+			AActor* test;
+		};
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_test = { UE4CodeGen_Private::EPropertyClass::Object, "test", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ChairControl_eventDestroy_Parms, test), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_test,
+			};
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "ModuleRelativePath", "Public/ChairControl.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_UChairControl, "Destroy", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x00020401, sizeof(ChairControl_eventDestroy_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
@@ -182,23 +212,28 @@ void EmptyLinkFunctionForGeneratedCodeChairControl() {}
 		{
 			bool connected;
 			int32 ComPort;
+			AActor* TargetActor;
 			UChairControl* ReturnValue;
 		};
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
 			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Object, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(ChairControl_eventSerialPort_Parms, ReturnValue), Z_Construct_UClass_UChairControl_NoRegister, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_TargetActor = { UE4CodeGen_Private::EPropertyClass::Object, "TargetActor", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ChairControl_eventSerialPort_Parms, TargetActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 			static const UE4CodeGen_Private::FIntPropertyParams NewProp_ComPort = { UE4CodeGen_Private::EPropertyClass::Int, "ComPort", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ChairControl_eventSerialPort_Parms, ComPort), METADATA_PARAMS(nullptr, 0) };
 			auto NewProp_connected_SetBit = [](void* Obj){ ((ChairControl_eventSerialPort_Parms*)Obj)->connected = 1; };
 			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_connected = { UE4CodeGen_Private::EPropertyClass::Bool, "connected", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000180, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(ChairControl_eventSerialPort_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_connected_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
 			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_TargetActor,
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ComPort,
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_connected,
 			};
 #if WITH_METADATA
 			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 				{ "Category", "ChairControl" },
+				{ "DefaultToSelf", "TargetActor" },
+				{ "HidePin", "TargetActor" },
 				{ "ModuleRelativePath", "Public/ChairControl.h" },
 			};
 #endif
@@ -211,27 +246,80 @@ void EmptyLinkFunctionForGeneratedCodeChairControl() {}
 	{
 		struct ChairControl_eventStartSending_Parms
 		{
-			AActor* TargetActor;
-			float time;
+			float frequency;
+			bool log;
 		};
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_time = { UE4CodeGen_Private::EPropertyClass::Float, "time", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ChairControl_eventStartSending_Parms, time), METADATA_PARAMS(nullptr, 0) };
-			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_TargetActor = { UE4CodeGen_Private::EPropertyClass::Object, "TargetActor", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ChairControl_eventStartSending_Parms, TargetActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+			auto NewProp_log_SetBit = [](void* Obj){ ((ChairControl_eventStartSending_Parms*)Obj)->log = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_log = { UE4CodeGen_Private::EPropertyClass::Bool, "log", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010040000000080, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(ChairControl_eventStartSending_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_log_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_frequency = { UE4CodeGen_Private::EPropertyClass::Float, "frequency", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010040000000080, 1, nullptr, STRUCT_OFFSET(ChairControl_eventStartSending_Parms, frequency), METADATA_PARAMS(nullptr, 0) };
 			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
-				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_time,
-				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_TargetActor,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_log,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_frequency,
 			};
 #if WITH_METADATA
 			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "AdvancedDisplay", "Frequency, Log" },
 				{ "Category", "ChairControl" },
-				{ "DefaultToSelf", "TargetActor" },
-				{ "HidePin", "TargetActor" },
+				{ "CPP_Default_frequency", "0.050000" },
+				{ "CPP_Default_log", "false" },
 				{ "ModuleRelativePath", "Public/ChairControl.h" },
 			};
 #endif
 			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_UChairControl, "StartSending", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(ChairControl_eventStartSending_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_UChairControl_StopSending()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "ChairControl" },
+				{ "ModuleRelativePath", "Public/ChairControl.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_UChairControl, "StopSending", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, 0, nullptr, 0, 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_UChairControl_TimerSending()
+	{
+		struct ChairControl_eventTimerSending_Parms
+		{
+			float time;
+			float frequency;
+			bool log;
+		};
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			auto NewProp_log_SetBit = [](void* Obj){ ((ChairControl_eventTimerSending_Parms*)Obj)->log = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_log = { UE4CodeGen_Private::EPropertyClass::Bool, "log", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010040000000080, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(ChairControl_eventTimerSending_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_log_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_frequency = { UE4CodeGen_Private::EPropertyClass::Float, "frequency", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010040000000080, 1, nullptr, STRUCT_OFFSET(ChairControl_eventTimerSending_Parms, frequency), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_time = { UE4CodeGen_Private::EPropertyClass::Float, "time", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ChairControl_eventTimerSending_Parms, time), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_log,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_frequency,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_time,
+			};
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "AdvancedDisplay", "Frequency, Log" },
+				{ "Category", "ChairControl" },
+				{ "CPP_Default_frequency", "0.050000" },
+				{ "CPP_Default_log", "false" },
+				{ "CPP_Default_time", "1.000000" },
+				{ "ModuleRelativePath", "Public/ChairControl.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_UChairControl, "TimerSending", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(ChairControl_eventTimerSending_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
@@ -251,12 +339,15 @@ void EmptyLinkFunctionForGeneratedCodeChairControl() {}
 			};
 			static const FClassFunctionLinkInfo FuncInfo[] = {
 				{ &Z_Construct_UFunction_UChairControl_ClosePort, "ClosePort" }, // 2302251590
-				{ &Z_Construct_UFunction_UChairControl_Control, "Control" }, // 4040383509
+				{ &Z_Construct_UFunction_UChairControl_Control, "Control" }, // 1375022564
+				{ &Z_Construct_UFunction_UChairControl_Destroy, "Destroy" }, // 1288651172
 				{ &Z_Construct_UFunction_UChairControl_FloatToBytes, "FloatToBytes" }, // 4027077633
 				{ &Z_Construct_UFunction_UChairControl_isConnected, "isConnected" }, // 1838507261
 				{ &Z_Construct_UFunction_UChairControl_PortWrite, "PortWrite" }, // 349781521
-				{ &Z_Construct_UFunction_UChairControl_SerialPort, "SerialPort" }, // 4188101567
-				{ &Z_Construct_UFunction_UChairControl_StartSending, "StartSending" }, // 3710665151
+				{ &Z_Construct_UFunction_UChairControl_SerialPort, "SerialPort" }, // 3615029410
+				{ &Z_Construct_UFunction_UChairControl_StartSending, "StartSending" }, // 286305580
+				{ &Z_Construct_UFunction_UChairControl_StopSending, "StopSending" }, // 2955367214
+				{ &Z_Construct_UFunction_UChairControl_TimerSending, "TimerSending" }, // 823462712
 			};
 #if WITH_METADATA
 			static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
@@ -304,7 +395,7 @@ void EmptyLinkFunctionForGeneratedCodeChairControl() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UChairControl, 1854320546);
+	IMPLEMENT_CLASS(UChairControl, 916219428);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UChairControl(Z_Construct_UClass_UChairControl, &UChairControl::StaticClass, TEXT("/Script/VRChairPlugin"), TEXT("UChairControl"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UChairControl);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
