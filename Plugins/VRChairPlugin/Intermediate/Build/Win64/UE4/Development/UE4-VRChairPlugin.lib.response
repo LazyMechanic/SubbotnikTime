@@ -1,0 +1,8 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+"C:\Users\User\Desktop\Git\SubbotnikTime\Plugins\VRChairPlugin\Intermediate\Build\Win64\UE4\Development\VRChairPlugin\Module.VRChairPlugin.cpp.obj"
+"C:\Users\User\Desktop\Git\SubbotnikTime\Plugins\VRChairPlugin\Intermediate\Build\Win64\UE4\Development\VRChairPlugin\Module.VRChairPlugin.gen.cpp.obj"
+"C:\Users\User\Desktop\Git\SubbotnikTime\Intermediate\Build\Win64\UE4\Development\VRChairPlugin\PCLaunch.rc.res"
+/OUT:"C:\Users\User\Desktop\Git\SubbotnikTime\Plugins\VRChairPlugin\Binaries\Win64\UE4-VRChairPlugin.lib"
