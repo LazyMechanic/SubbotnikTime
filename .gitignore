@@ -75,3 +75,4 @@ Intermediate/*
 DerivedDataCache/*
 
 !Plugins/**/*.dll
+Plugins/**/Intermediate/Build/

@@ -15,7 +15,7 @@ class UChairControl;
 #endif
 #define VRCHAIRPLUGIN_ChairControl_generated_h
 
-#define HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_RPC_WRAPPERS \
+#define SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execControl) \
 	{ \
@@ -111,7 +111,7 @@ class UChairControl;
 	}
 
 
-#define HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+#define SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execControl) \
 	{ \
@@ -207,7 +207,7 @@ class UChairControl;
 	}
 
 
-#define HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_INCLASS_NO_PURE_DECLS \
+#define SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUChairControl(); \
 	friend VRCHAIRPLUGIN_API class UClass* Z_Construct_UClass_UChairControl(); \
@@ -217,7 +217,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_INCLASS \
+#define SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_INCLASS \
 private: \
 	static void StaticRegisterNativesUChairControl(); \
 	friend VRCHAIRPLUGIN_API class UClass* Z_Construct_UClass_UChairControl(); \
@@ -227,7 +227,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_STANDARD_CONSTRUCTORS \
+#define SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UChairControl(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UChairControl) \
@@ -240,7 +240,7 @@ private: \
 public:
 
 
-#define HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_ENHANCED_CONSTRUCTORS \
+#define SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UChairControl(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -253,32 +253,32 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UChairControl); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UChairControl)
 
 
-#define HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_PRIVATE_PROPERTY_OFFSET
-#define HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_16_PROLOG
-#define HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_GENERATED_BODY_LEGACY \
+#define SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_PRIVATE_PROPERTY_OFFSET
+#define SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_16_PROLOG
+#define SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_PRIVATE_PROPERTY_OFFSET \
-	HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_RPC_WRAPPERS \
-	HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_INCLASS \
-	HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_STANDARD_CONSTRUCTORS \
+	SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_PRIVATE_PROPERTY_OFFSET \
+	SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_RPC_WRAPPERS \
+	SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_INCLASS \
+	SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_GENERATED_BODY \
+#define SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_PRIVATE_PROPERTY_OFFSET \
-	HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
-	HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_INCLASS_NO_PURE_DECLS \
-	HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_ENHANCED_CONSTRUCTORS \
+	SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_PRIVATE_PROPERTY_OFFSET \
+	SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_INCLASS_NO_PURE_DECLS \
+	SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID HostProject_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h
+#define CURRENT_FILE_ID SubbotnikTime_Plugins_VRChairPlugin_Source_VRChairPlugin_Public_ChairControl_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
