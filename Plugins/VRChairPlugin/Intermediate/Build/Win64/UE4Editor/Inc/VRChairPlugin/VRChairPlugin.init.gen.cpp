@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-#include "GeneratedCppIncludes.h"
+#include "UObject/GeneratedCppIncludes.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -19,7 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeVRChairPlugin_init() {}
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/VRChairPlugin",
 				PKG_CompiledIn | 0x00000000,
-				0x45BB6BAE,
+				0x7D350D49,
 				0x41FB6123,
 				nullptr, 0,
 				METADATA_PARAMS(nullptr, 0)
